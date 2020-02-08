@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scene/bala_abanico.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/proyectiles.png" type="Texture" id=2]
+[ext_resource path="res://BFG-FX/Contra SFX (29).wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.46927, 3.42996 )
+
+[node name="cuerpoBala" type="KinematicBody2D" groups=[
+"bala",
+]]
+script = ExtResource( 1 )
+potencia = 150
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 1.71795, 0.290502 )
+scale = Vector2( 0.631626, 0.632081 )
+
+[node name="1" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+
+[node name="Sprite2" type="Sprite" parent="1"]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="1"]
+position = Vector2( 0.986778, 0.0143167 )
+shape = SubResource( 1 )
+
+[node name="2" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+
+[node name="Sprite2" type="Sprite" parent="2"]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="2"]
+position = Vector2( 0.986778, 0.0143167 )
+shape = SubResource( 1 )
+
+[node name="3" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+
+[node name="Sprite2" type="Sprite" parent="3"]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="3"]
+position = Vector2( 0.986778, 0.0143167 )
+shape = SubResource( 1 )
+
+[node name="4" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+
+[node name="Sprite2" type="Sprite" parent="4"]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="4"]
+position = Vector2( 0.986778, 0.0143167 )
+shape = SubResource( 1 )
+
+[node name="5" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+
+[node name="Sprite2" type="Sprite" parent="5"]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="5"]
+position = Vector2( 0.986778, 0.0143167 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

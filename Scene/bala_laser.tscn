@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scene/bala_laser.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/proyectiles.png" type="Texture" id=2]
+[ext_resource path="res://BFG-FX/Contra SFX (13).wav" type="AudioStream" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.07862, 2.96591 )
+
+[node name="cuerpoBala" type="KinematicBody2D" groups=[
+"bala",
+]]
+position = Vector2( -8.27222, -0.116509 )
+script = ExtResource( 1 )
+potencia = 200
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -16.0842, 1.10971 )
+scale = Vector2( 2.42767, 0.300049 )
+
+[node name="1" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+position = Vector2( 0.233017, 0 )
+
+[node name="Sprite" type="Sprite" parent="1"]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1"]
+position = Vector2( 1.90735e-006, 1.0475 )
+shape = SubResource( 1 )
+
+[node name="2" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="2"]
+position = Vector2( -15.8495, 0 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2"]
+position = Vector2( -15.9211, 1.0475 )
+shape = SubResource( 1 )
+
+[node name="3" type="KinematicBody2D" parent="." groups=[
+"bala",
+]]
+editor/display_folded = true
+position = Vector2( -31.4211, -3.00758 )
+
+[node name="Sprite" type="Sprite" parent="3"]
+position = Vector2( -0.475965, 2.98929 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3"]
+position = Vector2( -0.547554, 4.03679 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

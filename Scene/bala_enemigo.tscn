@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scene/bala_enemigo.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/proyectiles.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.05944, 3.98967 )
+
+[node name="cuerpoBala" type="KinematicBody2D" groups=[
+"bala_enemigo",
+"enemigo",
+]]
+script = ExtResource( 1 )
+potencia = 75
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 7
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.356621, -0.237747 )
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.291898, -0.145946 )
+scale = Vector2( 0.387025, 0.430809 )
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

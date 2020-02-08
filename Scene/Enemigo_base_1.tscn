@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scene/Enemigo_base.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/enemigo_base.png" type="Texture" id=2]
+[ext_resource path="res://Scene/enem.explos.tres" type="Animation" id=3]
+[ext_resource path="res://Scene/enem_run.tres" type="Animation" id=4]
+[ext_resource path="res://Scene/enem_salto.tres" type="Animation" id=5]
+[ext_resource path="res://BFG-FX/Super C SFX (13).wav" type="AudioStream" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.3697, 15.1616 )
+
+[node name="Enemigo_base" type="KinematicBody2D" groups=[
+"enemigo",
+]]
+position = Vector2( 341.202, -238.842 )
+script = ExtResource( 1 )
+gravedad = 2000.0
+vel_movimiento = 3000.0
+vel_salto = 2000.0
+vidas = 1
+puntos = 10
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 3
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.350754, 0.701523 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/enem_explos = ExtResource( 3 )
+anims/enem_run = ExtResource( 4 )
+anims/enem_salto = ExtResource( 5 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="muerte" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

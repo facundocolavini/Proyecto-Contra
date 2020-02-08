@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://main_gameover.gd" type="Script" id=1]
+[ext_resource path="res://textura/main_menu_cursor.png" type="Texture" id=2]
+[ext_resource path="res://BFG-FX/11_-_Contra_-_NES_-_Game_Over.ogg" type="AudioStream" id=3]
+[ext_resource path="res://BFG-FX/10_-_Contra_-_NES_-_Stage_Clear.ogg" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/contra-famicom-nes.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 17
+font_data = SubResource( 1 )
+
+[node name="main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="Position2D" parent="GUI"]
+
+[node name="cursor" type="Sprite" parent="GUI/Menu"]
+position = Vector2( 392.453, 286.516 )
+texture = ExtResource( 2 )
+
+[node name="txt_gameover" type="Label" parent="GUI/Menu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 309.942
+margin_top = 129.053
+margin_right = 601.942
+margin_bottom = 340.053
+custom_fonts/font = SubResource( 2 )
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="txt_player1" type="Label" parent="GUI/Menu"]
+margin_left = -45.5285
+margin_top = -73.7061
+margin_right = 246.472
+margin_bottom = 137.294
+custom_fonts/font = SubResource( 2 )
+text = "1P"
+align = 1
+valign = 1
+
+[node name="txt_pp1" type="Label" parent="GUI/Menu"]
+margin_left = 131.005
+margin_top = 22.0
+margin_right = 269.005
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="txt_ph" type="Label" parent="GUI/Menu"]
+margin_left = 255.788
+margin_top = 82.0
+margin_right = 394.788
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="txt_pp2" type="Label" parent="GUI/Menu"]
+margin_left = 638.474
+margin_top = 25.5777
+margin_right = 776.474
+margin_bottom = 43.5777
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="txt_hi" type="Label" parent="GUI/Menu"]
+margin_left = 69.3197
+margin_top = -13.8553
+margin_right = 361.32
+margin_bottom = 197.145
+custom_fonts/font = SubResource( 2 )
+text = "hi "
+align = 1
+valign = 1
+
+[node name="txt_player2" type="Label" parent="GUI/Menu"]
+margin_left = 466.441
+margin_top = -70.8167
+margin_right = 758.44
+margin_bottom = 140.184
+custom_fonts/font = SubResource( 2 )
+text = "2P"
+align = 1
+valign = 1
+
+[node name="txt_gameover2" type="Label" parent="GUI/Menu"]
+margin_left = 341.031
+margin_top = 183.204
+margin_right = 633.031
+margin_bottom = 394.204
+custom_fonts/font = SubResource( 2 )
+text = "CONTINUE"
+align = 1
+valign = 1
+
+[node name="txt_gameover3" type="Label" parent="GUI/Menu"]
+margin_left = 300.955
+margin_top = 209.933
+margin_right = 592.955
+margin_bottom = 420.933
+custom_fonts/font = SubResource( 2 )
+text = "END"
+align = 1
+valign = 1
+
+[node name="continuar" type="Position2D" parent="GUI/Menu"]
+position = Vector2( 392.657, 286.196 )
+
+[node name="end" type="Position2D" parent="GUI/Menu"]
+position = Vector2( 393.033, 315.083 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
