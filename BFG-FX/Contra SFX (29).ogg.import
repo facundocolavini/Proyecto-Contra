@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Contra SFX (29).ogg-5569dcab9dcbc610706e09778e0cd254.oggstr"
+
+[deps]
+
+source_file="res://BFG-FX/Contra SFX (29).ogg"
+dest_files=[ "res://.import/Contra SFX (29).ogg-5569dcab9dcbc610706e09778e0cd254.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
