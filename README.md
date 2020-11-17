@@ -14,7 +14,7 @@ Debo aclarar que es para fines educativos y es una reecreacion de un juego ya cr
  
 # Juego
 El juego que reecree fue lanzado en 1986 por KONAMI llamado Contra. 
-El programa contiene el  primer solo el primer nivel del un juego.
+El programa contiene solo el primer nivel del un juego.
 
 # Tecnologias y Lenguajes
  Esta recreación fue llevada acabo mediante el engine Godot con el propio lenguaje del mismo  llamado GDScipt.
